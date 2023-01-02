@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+// import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+// import { addContacts } from 'redux/actions/contacts';
 import { addContacts } from 'redux/slices/contacts';
 import { nanoid } from 'nanoid';
+
 import s from 'components/ContactForm/ContactForm.module.css';
 
 export default function ContactForm() {
@@ -26,6 +29,7 @@ export default function ContactForm() {
         break;
     }
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -72,3 +76,7 @@ export default function ContactForm() {
     </form>
   );
 }
+
+// ContactForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+// };

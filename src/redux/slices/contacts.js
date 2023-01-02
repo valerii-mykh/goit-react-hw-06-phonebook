@@ -12,7 +12,7 @@ const contactsSlice = createSlice({
     addContacts: (state, action) => {
       localStorage.setItem(
         'contacts',
-        JSON.stringify([...state, action.payload])
+        JSON.stringify([...state, action.payload]),
       );
       return [...state, action.payload];
     },
@@ -23,5 +23,22 @@ const contactsSlice = createSlice({
     },
   },
 });
+
+
+// export const filterSlice = createSlice({
+//   name: 'filter',
+//   initialState: '',
+//   reducers: {
+//     filterContacts: (state, action) => action.payload,
+//   },
+// });
+
 export const { addContacts, deleteContacts } = contactsSlice.actions;
 export default contactsSlice.reducer;
+
+
+
+// export const { filterContacts } = filterSlice.actions;
+
+// export default filterSlice.reducer;
+

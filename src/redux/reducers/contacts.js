@@ -13,15 +13,12 @@ const contacts = [
 
 const contactsStorage = JSON.parse(localStorage.getItem('contacts'));
 
-export const contactsReducer = (
-  state = contactsStorage ?? contacts,
-  action
-) => {
+export const contactsReducer = (state = contactsStorage ?? contacts, action) => {
   switch (action.type) {
     case ADD_CONTACTS:
       localStorage.setItem(
         'contacts',
-        JSON.stringify([...state, action.payload])
+        JSON.stringify([...state, action.payload]),
       );
       return [...state, action.payload];
     case DELETE_CONTACTS:
@@ -41,3 +38,4 @@ export const filterReducer = (state = '', action) => {
       return state;
   }
 };
+
